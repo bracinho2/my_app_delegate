@@ -1,10 +1,13 @@
+import 'package:flutter/material.dart';
+
 abstract class AppAuth {
-  Future<bool> loggedIn();
+  Future<void> loggedIn();
 }
 
 class AppAuthentication implements AppAuth {
+  final isLogged = ValueNotifier<bool>(false);
   @override
-  Future<bool> loggedIn() async {
-    return true;
+  Future<void> loggedIn() async {
+    isLogged.value = true;
   }
 }
