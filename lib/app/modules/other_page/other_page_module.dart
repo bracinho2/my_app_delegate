@@ -9,7 +9,9 @@ class OtherPageModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           '/',
-          child: (context, args) => const OtherPage(),
+          child: (context, args) => OtherPage(
+            delegate: context.read(),
+          ),
         ),
       ];
 }
